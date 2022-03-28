@@ -1,0 +1,133 @@
+@use "./utils/" as *;
+// start input text styles
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: var(--border-default);
+  font-size: var(--font-size-medium);
+  color: var(--font-custom-color);
+  border-radius: var(--border-radius-default);
+  -webkit-transition: var(--layout-transition-speed);
+  transition: var(--layout-transition-speed);
+  cursor: text;
+  @include appearance();
+
+  &:focus {
+    outline: none;
+    color: var(--font-focus-color);
+    border-color: var(--border-focus-color) !important;
+    box-shadow: none;
+    -webkit-transition: var(--layout-transition-speed);
+    transition: var(--layout-transition-speed);
+  }
+
+  &:disabled {
+    background-color: var(--disabled-bg);
+    border: none !important;
+    cursor: not-allowed;
+  }
+}
+
+// start input text styles
+
+body.user-is-tabbing textarea {
+  box-shadow: none !important;
+}
+// end input text styles
+
+.input-box,
+.select-box {
+  .invalid-message {
+    visibility: hidden;
+    opacity: 0;
+    color: var(--validation-color);
+    height: 0;
+    display: flex;
+    -webkit-transition: var(--layout-transition-speed);
+    transition: var(--layout-transition-speed);
+  }
+
+  &.invalid {
+    .input-text,
+    textarea {
+      border-color: var(--validation-color);
+      -webkit-transition: var(--layout-transition-speed);
+      transition: var(--layout-transition-speed);
+
+      &:focus {
+        border-color: var(--validation-color) !important;
+      }
+    }
+
+    .invalid-message {
+      visibility: visible;
+      opacity: 1;
+      height: 100%;
+      margin-top: 5px;
+      -webkit-transition: var(--layout-transition-speed);
+      transition: var(--layout-transition-speed);
+    }
+  }
+}
+
+.input-box {
+  margin: 10px 0px;
+
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  input[type="file"] {
+    height: 45px;
+  }
+
+  label {
+    margin-bottom: 5px;
+    color: var(--font-custom-color);
+    font-size: var(--font-size-medium);
+  }
+}
+
+.inline-btn-box {
+  .input-text-block {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .input-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .input-btn {
+    border-left: none !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
+.select-box {
+  margin: 10px 0px;
+
+  label {
+    margin-bottom: 5px;
+    color: var(--font-custom-color);
+    font-size: var(--font-size-medium);
+  }
+
+  .select-container {
+    .select-option__multi-value__label {
+      font-weight: var(--font-weight-bold-one);
+      font-size: var(--font-size-small);
+    }
+  }
+}
+
+@include placeholder {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height);
+  text-transform: capitalize;
+}

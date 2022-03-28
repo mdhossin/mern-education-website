@@ -1,0 +1,140 @@
+@use "../core/utils" as *;
+.contact {
+  margin-top: 4rem !important;
+  width: 500px;
+  margin: 0 auto;
+  padding: 4rem 3.5rem 3rem 3.5rem;
+  box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+  border-radius: 0.3rem;
+  @include breakpoints-down("small") {
+    width: 350px;
+    padding: 43px 20px 50px;
+  }
+  //extra medium 375px
+  @include breakpoints-down("xm") {
+    width: 300px;
+  }
+  @include breakpoints-down("xs") {
+    width: 280px;
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    text-align: center;
+
+    @include breakpoint-up("xlarge") {
+      font-size: 2rem;
+    }
+  }
+  // forgot password forgot page
+  &__desc {
+    text-align: center;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+  }
+  &__form {
+    @include breakpoint-up("medium") {
+    }
+    &__div {
+      margin: 1rem 0;
+
+      position: relative;
+      small {
+        position: absolute;
+        top: 70%;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        opacity: 0.5;
+        svg {
+          font-size: 16px;
+        }
+      }
+
+      &-tag {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+
+    input:invalid[focused="true"] {
+      border: 1px solid red;
+    }
+
+    input:invalid[focused="true"] ~ span {
+      display: block;
+    }
+
+    span {
+      font-size: 12px;
+      padding: 3px;
+      color: red;
+      display: none;
+    }
+
+    .social button {
+      width: 100%;
+      margin: 10px 0;
+      height: 50px;
+      text-transform: capitalize;
+      box-shadow: 0 2px 4px #777;
+
+      span {
+        display: block;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        margin-left: 10px;
+
+        @include breakpoint-up("medium") {
+          margin-left: 60px;
+        }
+
+        @include breakpoint-up("large") {
+          margin-left: 95px;
+        }
+      }
+    }
+
+    // forgot text singup page
+    &__forgot {
+      text-align: end;
+      a {
+        transition: var(--transition);
+        &:hover {
+          color: var(--theme-color);
+        }
+      }
+    }
+
+    // reset password forgot page
+    &__reset {
+      display: flex;
+      gap: 1rem;
+
+      &-submit,
+      &-cancel {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.pass {
+  position: relative;
+}
+.pass small {
+  position: absolute;
+  top: 70%;
+  right: 8px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.5;
+  svg {
+    font-size: 16px;
+  }
+}

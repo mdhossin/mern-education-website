@@ -1,0 +1,149 @@
+@use "./utils/" as *;
+.hero-section {
+  width: 100%;
+  background-color: #0f0f0f;
+  color: #fff;
+  margin-top: var(--header-height);
+
+  @include breakpoint-up("medium") {
+    height: 100vh;
+    width: 100%;
+  }
+}
+// .hero-slide {
+//   margin-bottom: 3rem;
+// }
+
+.hero-slide__item {
+  width: 100%;
+  position: relative;
+  background-position: 100%;
+  background-size: contain;
+
+  background-repeat: no-repeat;
+  padding: 5rem 0;
+
+  @include breakpoint-up("large") {
+    padding: 9rem 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, #0f0f0f, rgba(#000, 0));
+  }
+
+  &__content {
+    position: relative;
+
+    &__info {
+      width: 100%;
+
+      position: relative;
+
+      @include breakpoint-up("large") {
+        width: 55%;
+      }
+
+      & > * ~ * {
+        margin-top: 2rem;
+      }
+
+      .title {
+        font-weight: 700;
+        line-height: 1.3;
+        font-size: 3rem;
+        color: #fff;
+        margin-top: 1.2rem;
+
+        // @include tablet {
+        // }
+        @include breakpoint-up("xlarge") {
+          font-size: 4rem;
+        }
+
+        @include breakpoints-down("xm") {
+          font-size: 2.5rem;
+        }
+      }
+
+      .overview {
+        font-weight: 700;
+        font-size: 24px;
+        color: #fff;
+      }
+
+      .btns > * ~ * {
+        margin-left: 1rem;
+      }
+
+      .btns,
+      .title,
+      .overview {
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+      }
+
+      .shop-now {
+        width: 200px;
+        // display: block;
+        // margin-top: 1rem;
+        text-transform: capitalize;
+        font-size: 16px;
+
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 0;
+        height: 50px;
+        line-height: 50px;
+        transition: var(--transition);
+
+        &:hover {
+          background-color: #fff;
+          color: #2c2c2c;
+        }
+
+        @include breakpoints-down("small") {
+          width: 170px;
+        }
+      }
+    }
+  }
+
+  &.active > &__content > &__content__info {
+    .btns,
+    .title,
+    .overview {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .title {
+      transition-delay: 0.3s, 0.3s;
+    }
+
+    .overview {
+      transition-delay: 0.6s, 0.6s;
+    }
+
+    .btns {
+      transition-delay: 0.9s, 0.9s;
+    }
+  }
+}

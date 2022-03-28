@@ -1,0 +1,46 @@
+.headers {
+  background-color: grey;
+  margin-top: 6rem;
+}
+
+.headernav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &__list {
+    display: flex;
+    padding: 1rem 2.5rem;
+    &__item {
+      margin-right: 30px;
+
+      a {
+        color: rgb(230, 228, 228);
+      }
+    }
+  }
+}
+
+.dropdown {
+  &__menu {
+    position: absolute;
+    background-color: #fff;
+    color: #2c2c2c;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+    z-index: 999;
+    margin-top: 0.5rem;
+    display: none;
+    li {
+      padding-bottom: 0.5rem;
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+.show {
+  display: block;
+}
