@@ -26,7 +26,11 @@ const userController = {
       name: Joi.string().min(3).max(30).required(),
       email: Joi.string().email().required(),
       password: Joi.string()
-        .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
+        .pattern(
+          new RegExp(
+            "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,20}$"
+          )
+        )
         .required(),
       repeat_password: Joi.ref("password"),
     });
@@ -79,7 +83,7 @@ const userController = {
       const activation_token = createActivationToken(newUser);
       // console.log(activation_token);
 
-      const url = `${CLIENT_URL}/user/activate/${activation_token}`;
+      const url = `${CLIENT_URL}/activate/${activation_token}`;
       sendMail(email, url, "Verify your email address");
 
       //
