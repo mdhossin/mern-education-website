@@ -135,20 +135,6 @@ const userController = {
   async login(req, res, next) {
     // validation with schema\
 
-    const loginSchema = Joi.object({
-      email: Joi.string().email().required(),
-      password: Joi.string()
-        .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
-        .required(),
-    });
-
-    const { error } = loginSchema.validate(req.body);
-    // console.log(req.body);
-
-    if (error) {
-      return next(error);
-    }
-
     const { email, password } = req.body;
 
     try {
