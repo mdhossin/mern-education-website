@@ -247,70 +247,10 @@ const userController = {
     }
   },
 
-  async getAllUser(req, res, next) {
-    try {
-      const users = await User.find().select("-password");
-
-      res.json(users);
-    } catch (err) {
-      return next(err);
-    }
-  },
-
   async logout(req, res, next) {
     try {
       res.clearCookie("refreshtoken", { path: "/user/refresh_token" });
       return res.json({ message: "Logged out." });
-    } catch (err) {
-      return next(err);
-    }
-  },
-  async updateUser(req, res, next) {
-    try {
-      const { name, avatar } = req.body;
-      const user = await User.findOneAndUpdate(
-        { _id: req.user.id },
-        {
-          name,
-          avatar,
-        },
-        {
-          new: true,
-        }
-      );
-      res.json({ message: "Update Success!", user });
-    } catch (err) {
-      return next(err);
-    }
-  },
-
-  async updateUsersRole(req, res, next) {
-    try {
-      const { role } = req.body;
-
-      await User.findOneAndUpdate(
-        {
-          _id: req.params.id,
-        },
-        {
-          role,
-        },
-        {
-          new: true,
-        }
-      );
-      res.json({ message: "Update Success!" });
-    } catch (err) {
-      return next(err);
-    }
-  },
-
-  async deleteUser(req, res, next) {
-    try {
-      await User.findByIdAndDelete(req.params.id);
-      res.json({
-        message: "Deleted Successful!",
-      });
     } catch (err) {
       return next(err);
     }

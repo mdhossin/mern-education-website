@@ -1,6 +1,6 @@
 const express = require("express");
 const auth = require("../middleware/auth");
-const authAdmin = require("../middleware/authAdmin");
+
 const {
   register,
   activateEmail,
@@ -9,11 +9,9 @@ const {
   forgotPassword,
   resetPassword,
   getSingleUser,
-  getAllUser,
+
   logout,
-  updateUser,
-  updateUsersRole,
-  deleteUser,
+
   googleLogin,
 } = require("../controller/userController");
 const router = express.Router();
@@ -37,21 +35,9 @@ router.post("/reset", auth, resetPassword);
 
 router.get("/infor", auth, getSingleUser);
 
-// all user information route only admin can get
-router.get("/all_infor", auth, authAdmin, getAllUser);
-
 // logout route
 
 router.get("/logout", logout);
-
-// update user normal
-router.patch("/update", auth, updateUser);
-
-// update user role only admin
-router.patch("/update_role/:id", auth, authAdmin, updateUsersRole);
-
-// delete user only can admin
-router.delete("/delete/:id", auth, authAdmin, deleteUser);
 
 // Social Login
 router.post("/google_login", googleLogin);
