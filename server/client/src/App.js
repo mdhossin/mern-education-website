@@ -18,6 +18,9 @@ import ActivationEmail from "./components/ActivationEmail/ActivationEmail";
 import Login from "./pages/Login/Login";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
+import Contact from "./pages/Contact/Contact";
+import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
+import Notfound from "./components/Notfound/Notfound";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +30,7 @@ function App() {
 
   const userLogin = useSelector((state) => state?.userLogin);
   const { loading } = userLogin;
-//t esting
+  //t esting
   useEffect(() => {
     const firstLogin = localStorage.getItem("firstLogin");
     if (firstLogin) {
@@ -71,7 +74,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="register" element={<Register />}></Route>
-          <Route path="login" element={<Login />}></Route>
+          <Route
+            path="login"
+            element={auth.isLogged ? <Notfound /> : <Login />}
+          ></Route>
           <Route
             path="/activate/:activation_token"
             element={<ActivationEmail />}
@@ -80,6 +86,16 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
 
           <Route path="/user/reset/:token" element={<ResetPassword />} />
+          <Route
+            path="contact"
+            element={
+              <PrivateRoute>
+                <Contact />
+              </PrivateRoute>
+            }
+          ></Route>
+
+          <Route path="*" element={<Notfound />}></Route>
         </Routes>
       </Router>
     </ToastProvider>

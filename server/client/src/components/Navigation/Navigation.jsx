@@ -37,6 +37,7 @@ const Navigation = () => {
   // console.log(auth);
 
   const { user, isLogged } = auth;
+  console.log(user);
 
   const handleLogout = async () => {
     try {
@@ -52,7 +53,7 @@ const Navigation = () => {
     <header className="header" ref={headerRef}>
       <nav className="nav container-div">
         <a href="#home" className="nav__logo">
-          <img width="70" src={logo} alt="shop" />
+          <img width="80" src={logo} alt="shop" />
         </a>
 
         <div className={"nav__menu " + (menuOpen && "show-menu")}>

@@ -50,7 +50,7 @@ const ActivationEmail = () => {
         <h1 className="activation__success">{success && success}</h1>
 
         <div>
-          <Link to="/signin">
+          <Link to="/login">
             {" "}
             <button className="button-secondary">Back to Login Page</button>
           </Link>

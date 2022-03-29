@@ -39,6 +39,7 @@ const Login = () => {
   };
 
   const responseGoogle = async (response) => {
+    console.log(response, "frontend google login");
     try {
       dispatch(googleLogin(response.tokenId));
     } catch (error) {
@@ -57,7 +58,7 @@ const Login = () => {
           autoDismiss: true,
         });
       }
-      navigate(redirect);
+      navigate(redirect, { replace: true });
     }
   }, [userInfo, error, addToast, navigate, dispatch, redirect]);
 
@@ -112,7 +113,7 @@ const Login = () => {
 
             <div className="social">
               <GoogleLogin
-                clientId="42026587683-l32vrb9irt4svjt5eh7b7v883uqjop0l.apps.googleusercontent.com"
+                clientId="255533567773-32i7dciqb3fm67r38lcqk3linatvgpki.apps.googleusercontent.com"
                 buttonText="Login with google"
                 onSuccess={responseGoogle}
                 cookiePolicy={"single_host_origin"}

@@ -136,30 +136,3 @@ export const googleLogin = (tokenId) => async (dispatch) => {
     });
   }
 };
-
-// refresh token action
-
-export const refreshToken = () => async (dispatch) => {
-  try {
-    dispatch({
-      type: GET_TOKEN_REQUEST,
-    });
-
-    const { data } = await axios.post("/user/refresh_token");
-    console.log(data, "refresh token action");
-
-    dispatch({
-      type: GET_TOKEN_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: GET_TOKEN__FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-    localStorage.removeItem("firstLogin");
-  }
-};
