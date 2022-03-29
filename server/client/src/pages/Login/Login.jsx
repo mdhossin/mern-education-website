@@ -26,11 +26,13 @@ const Login = () => {
 
   const dispatch = useDispatch();
 
-  const { loading, error, userInfo } = userLogin;
+  const { loading, error } = userLogin;
 
   const handleChangeInput = (e) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value });
   };
+
+  const token = useSelector((state) => state.token);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,16 +52,15 @@ const Login = () => {
     if (error) {
       dispatch({ type: USER_LOGIN_RESET });
       addToast(error, { appearance: "error", autoDismiss: true });
-    } else if (userInfo) {
-      if (userInfo.message !== undefined) {
-        addToast(userInfo?.message, {
-          appearance: "success",
-          autoDismiss: true,
-        });
-      }
+    } else if (token) {
+      addToast("Login Successfully.", {
+        appearance: "success",
+        autoDismiss: true,
+      });
+
       navigate(redirect, { replace: true });
     }
-  }, [userInfo, error, addToast, navigate, dispatch, redirect]);
+  }, [error, addToast, navigate, dispatch, redirect, token]);
 
   return (
     <section className="section">
