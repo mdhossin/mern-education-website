@@ -27,6 +27,9 @@
     width: 500px;
     text-align: center;
     color: #fff;
+    @include breakpoints-down("small") {
+      padding: 0 1.5rem;
+    }
 
     h1 {
       color: #fff;
