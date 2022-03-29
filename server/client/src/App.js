@@ -37,7 +37,9 @@ function App() {
     if (firstLogin) {
       const getToken = async () => {
         try {
-          const res = await axios.post("/user/refresh_token");
+          const res = await axios.post(
+            "https://mern-education.herokuapp.com/user/refresh_token"
+          );
           // console.log(res, "res");
           dispatch({ type: "GET_TOKEN", payload: res.data.access_token });
         } catch (error) {
