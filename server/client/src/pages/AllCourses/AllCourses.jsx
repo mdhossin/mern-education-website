@@ -10,8 +10,8 @@ const AllCourses = () => {
         <h2>All Courses</h2>
 
         <Row xs={1} sm={2} md={3} lg={4} className="g-4">
-          {servicesData.map((courses) => (
-            <Col>
+          {servicesData.map((courses, i) => (
+            <Col key={i}>
               <Card h-100>
                 <Card.Img variant="top" src={courses.img} />
                 <Card.Body>

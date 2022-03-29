@@ -1,8 +1,5 @@
 import ACTIONS from "../actions/index";
 import {
-  GET_TOKEN_REQUEST,
-  GET_TOKEN_SUCCESS,
-  GET_TOKEN__FAIL,
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
   USER_LOGIN_RESET,
@@ -86,34 +83,6 @@ export const userLoginReducer = (state = {}, action) => {
       };
 
     case USER_LOGIN_RESET:
-      return {};
-
-    default:
-      return state;
-  }
-};
-
-export const tokenReducer = (state = {}, action) => {
-  switch (action.type) {
-    case GET_TOKEN_REQUEST:
-      return {
-        loading: true,
-      };
-
-    case GET_TOKEN_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        token: action.payload,
-      };
-
-    case USER_LOGIN_FAIL:
-      return {
-        loading: false,
-        error: action.payload,
-      };
-
-    case GET_TOKEN__FAIL:
       return {};
 
     default:

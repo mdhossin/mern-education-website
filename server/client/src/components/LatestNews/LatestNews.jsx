@@ -7,8 +7,8 @@ const LatestNews = () => {
       <h2>Latest News</h2>
 
       <Row xs={1} sm={2} md={3} className="g-4">
-        {latestNews.map((latest) => (
-          <Col>
+        {latestNews.map((latest, i) => (
+          <Col key={i}>
             <Card>
               <Card.Img height="250" variant="top" src={latest.img} />
               <Card.Body>

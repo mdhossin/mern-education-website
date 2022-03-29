@@ -1,8 +1,5 @@
 import axios from "axios";
 import {
-  GET_TOKEN_REQUEST,
-  GET_TOKEN_SUCCESS,
-  GET_TOKEN__FAIL,
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
@@ -10,28 +7,6 @@ import {
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
 } from "../constants/userConstants";
-
-import ACTIONS from "./index";
-
-export const fetchAllUsers = async (token) => {
-  try {
-    const res = await axios.get("/user/all_infor", {
-      headers: {
-        Authorization: token,
-      },
-    });
-    return res;
-  } catch (err) {
-    console.log(err.response);
-  }
-};
-
-export const dispatchGetAllUsers = (res) => {
-  return {
-    type: ACTIONS.GET_ALL_USERS,
-    payload: res.data,
-  };
-};
 
 // user registration action
 
@@ -107,7 +82,6 @@ export const login = (email, password) => async (dispatch) => {
 // user google login
 
 export const googleLogin = (tokenId) => async (dispatch) => {
-  console.log(tokenId, "google frontend");
   try {
     dispatch({
       type: USER_LOGIN_REQUEST,
@@ -116,9 +90,6 @@ export const googleLogin = (tokenId) => async (dispatch) => {
     const { data } = await axios.post("/user/google_login", {
       tokenId,
     });
-    console.log(data, " data");
-
-    // const res = await postAPI('google_login', { id_token })
 
     dispatch({
       type: USER_LOGIN_SUCCESS,

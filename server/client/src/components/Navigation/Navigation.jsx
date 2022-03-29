@@ -37,7 +37,6 @@ const Navigation = () => {
   // console.log(auth);
 
   const { user, isLogged } = auth;
-  console.log(user);
 
   const handleLogout = async () => {
     try {
@@ -118,14 +117,18 @@ const Navigation = () => {
             <NavDropdown
               title={
                 isLogged ? (
-                  <img
-                    title={user?.name}
-                    style={{ borderRadius: "50%" }}
-                    width="22"
-                    height="22"
-                    src={user?.avatar}
-                    alt=""
-                  />
+                  <>
+                    <span style={{ marginRight: ".5rem", color: "#333" }}>
+                      {user.name}
+                    </span>
+                    <img
+                      style={{ borderRadius: "50%" }}
+                      width="22"
+                      height="22"
+                      src={user?.avatar}
+                      alt=""
+                    />
+                  </>
                 ) : (
                   <AiOutlineUser className="nav__dropdown-icon" />
                 )
@@ -138,7 +141,7 @@ const Navigation = () => {
                     className="nav__dropdown__item"
                     // onClick={() => navigate("/dashboard")}
                   >
-                    Dashboard
+                    Profile
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     className="nav__dropdown__item"

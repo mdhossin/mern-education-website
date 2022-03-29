@@ -4,7 +4,7 @@ import {
   userLoginReducer,
   userRegisterReducer,
 } from "./authReducer";
-import tokenReducer from "./tokenReducer";
+
 import token from "./tokenReducer";
 import users from "./usersReducer";
 
@@ -13,6 +13,6 @@ export default combineReducers({
   userRegister: userRegisterReducer,
   userLogin: userLoginReducer,
   token,
-  userToken: tokenReducer,
+
   users,
 });

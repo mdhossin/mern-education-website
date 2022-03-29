@@ -39,7 +39,6 @@ const Login = () => {
   };
 
   const responseGoogle = async (response) => {
-    console.log(response, "frontend google login");
     try {
       dispatch(googleLogin(response.tokenId));
     } catch (error) {

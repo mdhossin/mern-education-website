@@ -26,7 +26,7 @@ import AllCourses from "./pages/AllCourses/AllCourses";
 function App() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token);
-  console.log(token, "token");
+
   const auth = useSelector((state) => state.auth);
 
   const userLogin = useSelector((state) => state?.userLogin);
@@ -74,19 +74,28 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="register" element={<Register />}></Route>
+          <Route
+            path="register"
+            element={auth.isLogged ? <Notfound /> : <Register />}
+          ></Route>
           <Route
             path="login"
             element={auth.isLogged ? <Notfound /> : <Login />}
           ></Route>
           <Route
             path="/activate/:activation_token"
-            element={<ActivationEmail />}
+            element={auth.isLogged ? <Notfound /> : <ActivationEmail />}
           />
 
-          <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
+          <Route
+            path="/forgotpassword"
+            element={auth.isLogged ? <Notfound /> : <ForgotPassword />}
+          ></Route>
 
-          <Route path="/user/reset/:token" element={<ResetPassword />} />
+          <Route
+            path="/user/reset/:token"
+            element={auth.isLogged ? <Notfound /> : <ResetPassword />}
+          />
           <Route path="contact" element={<Contact />}></Route>
 
           <Route

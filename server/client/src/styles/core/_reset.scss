@@ -9,21 +9,7 @@
 html {
   scroll-behavior: smooth;
 }
-/* hide the scollbar when scrolling useing the mouse right side */
-// ::-webkit-scrollbar {
-//   width: 0.6rem;
-//   border-radius: 0.5rem;
-//   background-color: hsla(var(--second-hue), 8%, 38%);
-// }
 
-// ::-webkit-scrollbar-thumb {
-//   background-color: hsla(var(--second-hue), 8%, 26%);
-//   transition: var(--transition);
-
-//   &:hover {
-//     background-color: hsla(var(--second-hue), 8%, 20%);
-//   }
-// }
 html {
   overflow-x: hidden;
 }
@@ -190,7 +176,17 @@ ul {
   list-style: outside none none;
 }
 
-// button style
+.section {
+  padding: 5rem 0;
+
+  //min-width: 1024px
+  // @include breakpoint-up("xlarge") {
+  //   padding: 4rem 0;
+  // }
+}
+/*--
+    - Common Classes
+-----------------------------------------*/
 
 .button {
   display: block;
@@ -251,18 +247,6 @@ ul {
   }
 }
 
-.section {
-  padding: 5rem 0;
-
-  //min-width: 1024px
-  // @include breakpoint-up("xlarge") {
-  //   padding: 4rem 0;
-  // }
-}
-/*--
-    - Common Classes
------------------------------------------*/
-
 input {
   font-size: rem(14);
 
@@ -276,213 +260,6 @@ input {
   box-shadow: none;
 }
 
-// select {
-//   font-size: rem(14);
-
-//   width: 100%;
-
-//   color: #333;
-//   border: 0 solid #eceff8;
-//   background: transparent;
-//   box-shadow: none;
-// }
-
-// option {
-//   font-size: rem(14);
-
-//   padding-left: rem(10);
-
-//   border: 0 solid #626262;
-//   background: #fff;
-// }
-
 input:focus {
   background: transparent;
 }
-
-textarea {
-  font-size: rem(14);
-
-  width: 100%;
-  padding: rem(10);
-
-  resize: vertical;
-
-  border: rem(2) solid #eceff8;
-  background: #eceff8;
-}
-
-textarea:focus {
-  border: rem(2) solid #4fc1f0;
-  outline: none;
-  background: transparent;
-}
-
-/*--
-    Scroll Up
------------------------------------------*/
-
-.scroll-top {
-  position: fixed;
-  z-index: 9811 !important;
-  right: 20px;
-  bottom: 60px;
-
-  visibility: hidden;
-  overflow: hidden;
-
-  width: 50px;
-  height: 50px;
-
-  text-align: center;
-
-  opacity: 0;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  background: none;
-  background-color: var(--theme-color);
-  &.show {
-    visibility: visible;
-
-    opacity: 1;
-  }
-
-  &:hover {
-    & i {
-      animation-name: fadeInUp;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-
-      animation-fill-mode: both;
-    }
-  }
-}
-
-/*--
-    - Background Color
-------------------------------------------*/
-
-.default-overlay {
-  position: relative;
-  &:before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    content: "";
-  }
-}
-
-/* slider img bounce */
-
-@-webkit-keyframes bounce-img {
-  0% {
-    transform: translateY(0);
-
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(20px);
-
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-
-    opacity: 1;
-  }
-}
-
-@keyframes bounce-img {
-  0% {
-    transform: translateY(0);
-
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(20px);
-
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-
-    opacity: 1;
-  }
-}
-
-@keyframes snow {
-  0% {
-    background-position: 0 0, 0 0, 0 0;
-  }
-  100% {
-    background-position: 500px 1000px, 400px 400px, 300px 300px;
-  }
-}
-.effect-snow {
-  animation: snow 20s linear infinite;
-}
-
-/*************************
-         Margin top
-*************************/
-
-.scroll-top {
-  position: fixed;
-  z-index: 9811 !important;
-  right: 20px;
-  bottom: 60px;
-
-  visibility: hidden;
-  overflow: hidden;
-
-  width: 50px;
-  height: 50px;
-
-  text-align: center;
-
-  opacity: 0;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  background: none;
-  background-color: var(--theme-color);
-  &.show {
-    visibility: visible;
-
-    opacity: 1;
-  }
-  // @media #{var(--xs-layout)} {
-  //   width: 40px;
-  //   height: 40px;
-  // }
-  & i {
-    font-size: 22px;
-    line-height: 50px;
-
-    display: block;
-    // @media #{var(--xs-layout)} {
-    //   font-size: 16px;
-    //   line-height: 40px;
-    // }
-  }
-  &:hover {
-    & i {
-      animation-name: fadeInUp;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-
-      animation-fill-mode: both;
-    }
-  }
-}
-
-/*--
-    - Background Color
-------------------------------------------*/
