@@ -2,7 +2,10 @@ import course1 from "../assets/images/courses-1.jpg";
 import course2 from "../assets/images/courses-2.jpg";
 import course3 from "../assets/images/courses-3.jpg";
 import course4 from "../assets/images/courses-4.jpg";
+import course5 from "../assets/images/courses-5.jpg";
+import course6 from "../assets/images/courses-6.jpg";
 import latest1 from "../assets/images/latest-1.jpg";
+
 import latest2 from "../assets/images/latest-2.jpeg";
 import latest3 from "../assets/images/latest-3.jpg";
 import { BsPerson } from "react-icons/bs";
@@ -59,6 +62,30 @@ export const servicesData = [
     student: {
       personImg: <BsPerson className="icon" />,
       count: 11,
+    },
+  },
+  {
+    id: 5,
+    img: course5,
+    name: "KATE HUDSON",
+    title: "Learn Ethical Hacking from Scratch Your Stepping",
+    rating: 1,
+    price: 223,
+    student: {
+      personImg: <BsPerson className="icon" />,
+      count: 15,
+    },
+  },
+  {
+    id: 6,
+    img: course6,
+    name: "Jhon Doe",
+    title: "The Complete Salesforce Classic Administrator",
+    rating: 1,
+    price: 63,
+    student: {
+      personImg: <BsPerson className="icon" />,
+      count: 5,
     },
   },
 ];

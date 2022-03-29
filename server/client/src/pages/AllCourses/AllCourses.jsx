@@ -12,7 +12,7 @@ const AllCourses = () => {
         <Row xs={1} sm={2} md={3} lg={4} className="g-4">
           {servicesData.map((courses, i) => (
             <Col key={i}>
-              <Card h-100>
+              <Card>
                 <Card.Img variant="top" src={courses.img} />
                 <Card.Body>
                   <h5 className="courses__name">{courses.name}</h5>
