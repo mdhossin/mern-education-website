@@ -8,4 +8,4 @@
 - used tecnology:
 - Frontend : React, React-bootstrap, sass, redux, react-google-login, react-router dom v6
 - Backend: Node, Express, Mongoose, Mongodb, jsonwebtoken, nodemailer etc
-- Here is the live link (/)
+- Here is the live link (https://mern-education.herokuapp.com)
