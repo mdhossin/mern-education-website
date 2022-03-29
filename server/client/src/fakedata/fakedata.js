@@ -2,7 +2,11 @@ import course1 from "../assets/images/courses-1.jpg";
 import course2 from "../assets/images/courses-2.jpg";
 import course3 from "../assets/images/courses-3.jpg";
 import course4 from "../assets/images/courses-4.jpg";
+import latest1 from "../assets/images/latest-1.jpg";
+import latest2 from "../assets/images/latest-2.jpeg";
+import latest3 from "../assets/images/latest-3.jpg";
 import { BsPerson } from "react-icons/bs";
+import { CgCalendarDates } from "react-icons/cg";
 
 export const servicesData = [
   {
@@ -51,6 +55,45 @@ export const servicesData = [
     student: {
       personImg: <BsPerson className="icon" />,
       count: 11,
+    },
+  },
+];
+
+export const latestNews = [
+  {
+    id: 1,
+    img: latest1,
+
+    title: "How to Learn English Fast and Easy",
+    desc: "Scelerisque ante platea nullam himenaeos quam sollicitudin ullamcorper sodales tristique",
+
+    date: {
+      dateLogo: <CgCalendarDates className="icon" />,
+      time: "5 JULY 2022",
+    },
+  },
+  {
+    id: 2,
+    img: latest2,
+
+    title: "How to Learn Faster and Remember",
+    desc: "Scelerisque ante platea nullam himenaeos quam sollicitudin ullamcorper sodales tristique",
+
+    date: {
+      dateLogo: <CgCalendarDates className="icon" />,
+      time: "17 JULY 2022",
+    },
+  },
+  {
+    id: 3,
+    img: latest3,
+
+    title: "Online Courses from Top Universities",
+    desc: "Scelerisque ante platea nullam himenaeos quam sollicitudin ullamcorper sodales tristique",
+
+    date: {
+      dateLogo: <CgCalendarDates className="icon" />,
+      time: "17 JULY 2019",
     },
   },
 ];

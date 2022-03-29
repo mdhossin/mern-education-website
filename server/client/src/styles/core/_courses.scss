@@ -1,9 +1,39 @@
+@use "./utils/" as *;
 .courses {
+  padding: 4rem 0;
   h2 {
     text-align: center;
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 2rem;
+    position: relative;
+
+    @include breakpoint-up("large") {
+      font-size: 2rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30%;
+      top: 45px;
+      height: 2px;
+      background-color: #707070;
+
+      @include breakpoint-up("medium") {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @include breakpoint-up("large") {
+        top: 45px;
+        width: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
 
   &__name {
