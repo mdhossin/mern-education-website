@@ -14,9 +14,12 @@ const ActivationEmail = () => {
     if (activation_token) {
       const activationEmail = async () => {
         try {
-          const res = await axios.post("/user/activation", {
-            activation_token,
-          });
+          const res = await axios.post(
+            "https://mern-education.herokuapp.com/user/activation",
+            {
+              activation_token,
+            }
+          );
           // console.log(res, "res");
           setSuccess(res.data.message);
         } catch (error) {

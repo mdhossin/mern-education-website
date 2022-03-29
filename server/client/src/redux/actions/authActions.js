@@ -8,11 +8,14 @@ export const dispatchLogin = () => {
 };
 
 export const fetchUser = async (token) => {
-  const res = await axios.get("/user/infor", {
-    headers: {
-      Authorization: token,
-    },
-  });
+  const res = await axios.get(
+    "https://mern-education.herokuapp.com/user/infor",
+    {
+      headers: {
+        Authorization: token,
+      },
+    }
+  );
 
   return res;
 };
