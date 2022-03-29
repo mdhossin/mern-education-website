@@ -1,6 +1,6 @@
 import React from "react";
-import Banner from "../../components/Banner/Banner";
 import Courses from "../../components/Courses/Courses";
+import HeroSlide from "../../components/HeroSide/HeroSlide";
 import LatestNews from "../../components/LatestNews/LatestNews";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import Footer from "../Footer/Footer";
@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 const Home = () => {
   return (
     <section className="section">
-      <Banner />
+      <HeroSlide />
       <div className="container-div">
         <Courses />
         <LatestNews />

@@ -1,12 +1,13 @@
 @use "./utils/" as *;
+@use "./utils/" as *;
 
-.banner {
+.hero {
   height: 100vh;
-
-  background-image: url("../../assets/images/banner.jpg");
-  background-position: 100%;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  //   background-image: url("../../assets/images/banner.jpg");
   position: relative;
   display: flex;
   align-items: center;

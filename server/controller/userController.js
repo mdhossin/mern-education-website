@@ -17,8 +17,8 @@ const {
 } = require("../services/JwtService");
 const sendMail = require("./sendMail");
 
-// const CLIENT_URL = `http://localhost:3000`;
-const CLIENT_URL = `https://mern-education.herokuapp.com`;
+const CLIENT_URL = `http://localhost:3000`;
+// const CLIENT_URL = `https://mern-education.herokuapp.com`;
 
 const userController = {
   async register(req, res, next) {

@@ -40,7 +40,7 @@ const Navigation = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("https://mern-education.herokuapp.com/user/logout");
+      await axios.get("/user/logout");
       localStorage.removeItem("firstLogin");
       window.location.href = "/login";
     } catch (err) {

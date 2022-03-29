@@ -29,10 +29,7 @@ const ForgotPassword = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post(
-        "https://mern-education.herokuapp.com/user/forgot",
-        { email }
-      );
+      const res = await axios.post("/user/forgot", { email });
       setLoading(false);
       return setData({ ...data, error: "", success: res.data.message });
     } catch (error) {

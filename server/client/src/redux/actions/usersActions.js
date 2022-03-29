@@ -23,7 +23,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://mern-education.herokuapp.com/user/register",
+      "/user/register",
       { name, email, password },
       config
     );
@@ -57,7 +57,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://mern-education.herokuapp.com/user/login",
+      "/user/login",
       { email, password },
       config
     );
@@ -87,12 +87,9 @@ export const googleLogin = (tokenId) => async (dispatch) => {
       type: USER_LOGIN_REQUEST,
     });
 
-    const { data } = await axios.post(
-      "https://mern-education.herokuapp.com/user/google_login",
-      {
-        tokenId,
-      }
-    );
+    const { data } = await axios.post("/user/google_login", {
+      tokenId,
+    });
 
     dispatch({
       type: USER_LOGIN_SUCCESS,
