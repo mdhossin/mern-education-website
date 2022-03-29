@@ -8,6 +8,10 @@ import latest3 from "../assets/images/latest-3.jpg";
 import { BsPerson } from "react-icons/bs";
 import { CgCalendarDates } from "react-icons/cg";
 
+import user1 from "../assets/images/user-2.jpg";
+import richard from "../assets/images/richard.jpg";
+import tony from "../assets/images/tony.jpg";
+
 export const servicesData = [
   {
     id: 1,
@@ -95,5 +99,32 @@ export const latestNews = [
       dateLogo: <CgCalendarDates className="icon" />,
       time: "17 JULY 2019",
     },
+  },
+];
+
+export const testimonialData = [
+  {
+    id: 0,
+    imgurl: user1,
+    name: "Animal Magnetism",
+    feedback:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,",
+    company: "",
+  },
+  {
+    id: 1,
+    imgurl: richard,
+    name: "Richard",
+    feedback:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,",
+    company: "",
+  },
+  {
+    id: 2,
+    imgurl: tony,
+    name: "Tony Stern",
+    feedback:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,",
+    company: "",
   },
 ];

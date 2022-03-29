@@ -21,6 +21,7 @@ import ResetPassword from "./components/ResetPassword/ResetPassword";
 import Contact from "./pages/Contact/Contact";
 import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 import Notfound from "./components/Notfound/Notfound";
+import AllCourses from "./pages/AllCourses/AllCourses";
 
 function App() {
   const dispatch = useDispatch();
@@ -86,11 +87,13 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
 
           <Route path="/user/reset/:token" element={<ResetPassword />} />
+          <Route path="contact" element={<Contact />}></Route>
+
           <Route
-            path="contact"
+            path="courses"
             element={
               <PrivateRoute>
-                <Contact />
+                <AllCourses />
               </PrivateRoute>
             }
           ></Route>

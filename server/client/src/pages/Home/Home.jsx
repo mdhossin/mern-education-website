@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../../components/Banner/Banner";
 import Courses from "../../components/Courses/Courses";
 import LatestNews from "../../components/LatestNews/LatestNews";
+import Testimonials from "../../components/Testimonials/Testimonials";
 import Footer from "../Footer/Footer";
 
 const Home = () => {
@@ -11,8 +12,9 @@ const Home = () => {
       <div className="container-div">
         <Courses />
         <LatestNews />
+        <Testimonials />
       </div>
-      This is a home page
+
       <Footer />
     </section>
   );

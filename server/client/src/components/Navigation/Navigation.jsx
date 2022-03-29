@@ -69,11 +69,11 @@ const Navigation = () => {
             </li>
             <li className="nav__item">
               <Link
-                to="/services"
+                to="/courses"
                 onClick={() => setMenuOpen(false)}
                 className="nav__link"
               >
-                Services
+                Courses
               </Link>
             </li>
 

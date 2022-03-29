@@ -7,7 +7,7 @@ const Courses = () => {
     <section className="courses">
       <h2>Browse Our Top Courses</h2>
 
-      <Row xs={1} sm={2} md={3} className="g-4">
+      <Row xs={1} sm={2} md={3} lg={4} className="g-4">
         {servicesData.map((courses) => (
           <Col>
             <Card h-100>
