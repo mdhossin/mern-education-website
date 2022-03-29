@@ -1,7 +1,7 @@
 import React from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { BsChevronDoubleUp } from "react-icons/bs";
+
 const Footer = () => {
   return (
     <footer className="footer section">
